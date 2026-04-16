@@ -1,0 +1,54 @@
+{
+    "name": "toitzi/laravel-cloudflare-mail",
+    "description": "Cloudflare Email Service transport for Laravel mailers.",
+    "type": "library",
+    "homepage": "https://github.com/toitzi/laravel-cloudflare-mail",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tobias Oitzinger",
+            "email": "hello@toitzi.dev",
+            "homepage": "https://toitzi.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/http": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/mail": "^11.0 || ^12.0 || ^13.0",
+        "illuminate/support": "^11.0 || ^12.0 || ^13.0",
+        "symfony/mailer": "^7.0",
+        "symfony/mime": "^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0 || ^10.0 || ^11.0",
+        "pestphp/pest": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Toitzi\\LaravelCloudflareMail\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Toitzi\\LaravelCloudflareMail\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test:coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Toitzi\\LaravelCloudflareMail\\CloudflareMailServiceProvider"
+            ]
+        }
+    }
+}
